@@ -1,0 +1,1040 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>Vormans Brands LTD</title>
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="/css/bootstrap.css" />
+
+  <!-- Bootstrap CSS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!--font awesome-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!--owl slider stylesheet -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+  <!-- nice select -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css" integrity="sha256-mLBIhmBvigTFWPSCtvdu6a76T+3Xyt+K571hupeFLg4=" crossorigin="anonymous" />
+  <!-- font awesome style -->
+  <link href="/css/font-awesome.min.css" rel="stylesheet" />
+
+  <!-- Custom styles for this template -->
+  <link href="/css/style.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="/css/responsive.css" rel="stylesheet" />
+  <style>
+    html, body {
+    overflow-x: hidden;
+    }
+    .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 10px;
+            padding: 20px;
+            max-width: 1000px;
+            margin: auto;
+        }
+        .gallery-container img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 5px;
+            transition: transform 0.3s ease;
+        }
+        .gallery-container img:hover {
+            transform: scale(1.05);
+        }
+        .scroller__inner {
+  padding-block: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.scroller[data-animated="true"] {
+  overflow: hidden;
+  -webkit-mask: linear-gradient(
+    90deg,
+    transparent,
+    white 20%,
+    white 80%,
+    transparent
+  );
+  mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+}
+
+.scroller[data-animated="true"] .scroller__inner {
+  width: max-content;
+  flex-wrap: nowrap;
+  animation: scroll var(--_animation-duration, 40s)
+    var(--_animation-direction, forwards) linear infinite;
+}
+
+.scroller[data-direction="right"] {
+  --_animation-direction: reverse;
+}
+
+.scroller[data-direction="left"] {
+  --_animation-direction: forwards;
+}
+
+.scroller[data-speed="fast"] {
+  --_animation-duration: 20s;
+}
+
+.scroller[data-speed="slow"] {
+  --_animation-duration: 60s;
+}
+
+@keyframes scroll {
+  to {
+    transform: translate(calc(-50% - 0.5rem));
+  }
+}
+    .brands-section {
+        width: 100%;
+        overflow: hidden;
+        background: #f8f8f8;
+        padding: 20px 0;
+        position: relative;
+        margin-bottom: 30px;
+    }
+    .brands-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    overflow: hidden;
+    flex-wrap: nowrap;
+    overflow-x: auto; /* Allow scrolling only within the container */
+    scrollbar-width: none; /* Hide scrollbar for Firefox */
+    -ms-overflow-style: none; /* Hide scrollbar for IE/Edge */
+    white-space: nowrap;
+    padding: 10px;
+    scroll-behavior: smooth;
+}
+
+.brands-slider {
+        display: flex;
+        animation: scroll 15s linear infinite;
+    }
+
+    .brands-slider img {
+        height: 80px;
+        object-fit: contain;
+        padding: 0 10px;
+    }
+
+.brands-container::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for Chrome, Safari */
+}
+
+    .brands-container img {
+        height: 80px;
+        object-fit: contain;
+        transition: transform 0.3s ease;
+    }
+    .brands-container img:hover {
+        transform: scale(1.1);
+    }
+    .nav-button {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(0, 0, 0, 0.5);
+        color: white;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        z-index: 10;
+    }
+    .prev {
+        left: 10px;
+    }
+    .next {
+        right: 10px;
+    }
+</style>
+</head>
+
+<body>
+  <% if (success) { %>
+    <div class="alert alert-warning alert-dismissible fade show mt-3" role="alert">
+        <%= success %>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+<% } %>
+
+  <div class="hero_area">
+    <!-- header section strats -->
+    <header class="header_section">
+      <div class="header_top">
+        <div class="container-fluid header_top_container">
+          <a class="navbar-brand " href="/">
+            <img src="/images/logo.jpg" alt="Logo" width="120px">
+          </a>
+          <div class="contact_nav">
+            <a href="">
+              <i class="fa fa-map-marker" aria-hidden="true"></i>
+              <span>
+                Kilome Road, Nairobi
+              </span>
+            </a>
+            <a href="">
+              <i class="fa fa-phone" aria-hidden="true"></i>
+              <span>
+                Call : +254 728 905 225 
+              </span>
+            </a>
+            <a href="">
+              <i class="fa fa-envelope" aria-hidden="true"></i>
+              <span>
+                info@vormansbrandsltd.co.ke
+              </span>
+            </a>
+          </div>
+          <div class="social_box">
+            <a href="">
+              <i class="fa fa-facebook" aria-hidden="true"></i>
+            </a>
+            <a href="">
+              <i class="fa fa-twitter" aria-hidden="true"></i>
+            </a>
+            <a href="">
+              <i class="fa fa-linkedin" aria-hidden="true"></i>
+            </a>
+            <a href="">
+              <i class="fa fa-instagram" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="header_bottom">
+        <div class="container-fluid">
+          <nav class="navbar navbar-expand-lg custom_nav-container ">
+            <a class="navbar-brand navbar_brand_mobile" href="/"> 
+              <img src="/images/logo.jpg" alt="Logo" width="120px">
+            </a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class=""> </span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav  ">
+                <li class="nav-item active">
+                  <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#products">Products</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#about"> About</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#work">Work</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#contacts">Contact Us</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <!-- end header section -->
+    <!-- slider section -->
+    <section class="slider_section ">
+      <div id="customCarousel1" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="container ">
+              <div class="detail-box">
+                <h1>
+                  Get Noticed <br />
+                  Achieve visibility <br />
+                  That engages
+                </h1>
+                <div class="btn-box">
+                  <a href="#about" class="btn1">
+                    Read More
+                  </a>
+                  <a href="#contacts" class="btn2">
+                    Contact Us
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="container ">
+              <div class="detail-box">
+                <h1>
+                  We Create <br />
+                  The Things Clients <br />
+                  Dream Up
+                </h1>
+                <div class="btn-box">
+                  <a href="#about" class="btn1">
+                    Read More
+                  </a>
+                  <a href="#contacts" class="btn2">
+                    Contact Us
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel_btn-box">
+          <a class="carousel-control-prev" href="#customCarousel1" role="button" data-slide="prev">
+            <i class="fa fa-arrow-left" aria-hidden="true"></i>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#customCarousel1" role="button" data-slide="next">
+            <i class="fa fa-arrow-right" aria-hidden="true"></i>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+    </section>
+    <!-- end slider section -->
+  </div>
+
+  <!-- about section -->
+
+  <section class="about_section layout_padding" id="about">
+    <div class="container  ">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="detail-box">
+            <div class="heading_container">
+              <h2>Welcome to <span>Vormans Brands LTD</span></h2>
+            </div>
+            <p>
+              Vormans Brands Ltd is a dynamic advertising and promotions company specializing in Branding, Experiential Marketing, Events, and Production. Since 2009, we have been committed to helping businesses Get Noticed through innovative marketing strategies. Our expertise spans printing, merchandising, roadshows, promotional products, and signage, all tailored to enhance brand visibility. With a team of creative professionals and a passion for excellence, we ensure that every project delivers a lasting impact. <br> <br>Our mission is to provide high-quality, customized branding solutions that drive engagement and business growth. We uphold commitment, teamwork, integrity, quality excellence, and customer satisfaction as our core values. Whether it's corporate branding, digital printing, or event marketing, we offer solutions designed to help businesses thrive in competitive markets. At Vormans Brands Ltd, we don’t just promote brands—we create experiences that leave a lasting impression.
+            </p>
+            <a href="#work">
+              View Work
+            </a>
+          </div>
+        </div>
+        <div class="col-md-6 ">
+          <div class="img-box">
+            <img src="images/branding.jpeg" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end about section -->
+
+  <!-- portfolio section -->
+
+  <section class="portfolio_section " id="work">
+    <div class="container">
+      <div class="heading_container heading_center">
+        <h2>
+          Our Work Portfolio
+        </h2>
+      </div>
+      <div class="carousel-wrap ">
+        <div class="filter_box">
+          <nav class="owl-filter-bar">
+            <a href="#" class="item active" data-owl-filter="*">All</a>
+          </nav>
+        </div>
+      </div>
+    </div>
+    <div class="owl-carousel portfolio_carousel">
+      <div class="item decorative">
+        <div class="box">
+          <div class="img-box">
+            <img src="images/google1.jpg" alt="" />
+            <div class="btn_overlay">
+              <a href="" class="" data-toggle="modal" data-target=".google1">
+                See More
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="item facade">
+        <div class="box">
+          <div class="img-box">
+            <img src="images/bag1.jpg" alt="" />
+            <div class="btn_overlay">
+              <a href="" class="" data-toggle="modal" data-target=".bag1">
+                See More
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="item perforated decorative">
+        <div class="box">
+          <div class="img-box">
+            <img src="images/banner1.jpg" alt="" />
+            <div class="btn_overlay">
+              <a href="" class="" data-toggle="modal" data-target=".banner1">
+                See More
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="item railing">
+        <div class="box">
+          <div class="img-box">
+            <img src="images/book1.jpg" alt="" />
+            <div class="btn_overlay">
+              <a href="" class="" data-toggle="modal" data-target=".book1">
+                See More
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="item railing">
+        <div class="box">
+          <div class="img-box">
+            <img src="images/bottle1.jpg" alt="" />
+            <div class="btn_overlay">
+              <a href="" class="" data-toggle="modal" data-target=".bottle1">
+                See More
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="item railing">
+        <div class="box">
+          <div class="img-box">
+            <img src="images/branding1.jpg" alt="" />
+            <div class="btn_overlay">
+              <a href="" class="" data-toggle="modal" data-target=".branding1">
+                See More
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </section>
+
+  <div class="modal fade google1" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Merchandising</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="gallery-container">
+            <img src="images/google1.jpg" alt="Image 1">
+            <img src="images/google2.jpg" alt="Image 2">
+            <img src="images/google3.jpg" alt="Image 3">
+            <img src="images/google4.jpg" alt="Image 4">
+        </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade bottle1" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Merchandising</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="gallery-container">
+            <img src="images/bottle1.jpg" alt="Image 1">
+            <img src="images/bottle2.jpg" alt="Image 2">
+            <img src="images/bottle3.jpg" alt="Image 3">
+            <img src="images/hat1.jpg" alt="Image 3">
+            <img src="images/hat2.jpg" alt="Image 3">
+            <img src="images/tshirt1.jpg" alt="Image 3">
+            <img src="images/tshirt2.jpg" alt="Image 3">
+            <img src="images/tshirt3.jpg" alt="Image 3">
+        </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade banner1" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Banners</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="gallery-container">
+            <img src="images/banner1.jpg" alt="Image 1">
+            <img src="images/banner2.jpg" alt="Image 2">
+            <img src="images/banner3.jpg" alt="Image 3">
+            <img src="images/banner4.jpg" alt="Image 3">
+            <img src="images/banner5.jpg" alt="Image 3">
+        </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade book1" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Printing</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="gallery-container">
+            <img src="images/book1.jpg" alt="Image 1">
+            <img src="images/book2.jpg" alt="Image 2">
+        </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade bag1" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Labelling</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="gallery-container">
+            <img src="images/bag1.jpg" alt="Image 1">
+            <img src="images/bag2.jpg" alt="Image 2">
+            <img src="images/bag3.jpg" alt="Image 3">
+            <img src="images/bag4.jpg" alt="Image 4">
+        </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade branding1" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Branding</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="gallery-container">
+            <img src="images/branding1.jpg" alt="Image 1">
+            <img src="images/branding2.jpg" alt="Image 2">
+            <img src="images/branding3.jpg" alt="Image 3">
+        </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- end portfolio section -->
+
+  <!-- service section -->
+
+  <section class="service_section layout_padding" id="products">
+    <div class="container ">
+      <div class="heading_container heading_center">
+        <h2>Our <span>Products</span></h2>
+      </div>
+      <div class="row">
+        <div class="col-sm-6 col-md-4">
+            <div class="box">
+                <div class="img-box">
+                    <img src="images/branding1.jpg" alt="Printing" />
+                </div>
+                <div class="detail-box">
+                    <h5>Printing Services</h5>
+                    <p>High-quality digital & offset printing for business cards, magazines, fliers, posters, reports, and more.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-sm-6 col-md-4">
+            <div class="box">
+                <div class="img-box">
+                    <img src="images/branding3.jpg" alt="Branding" />
+                </div>
+                <div class="detail-box">
+                    <h5>Branding</h5>
+                    <p>Customized branding solutions including corporate, vehicle, and building branding for maximum visibility.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-sm-6 col-md-4">
+            <div class="box">
+                <div class="img-box">
+                    <img src="images/banner5.jpg" alt="Experiential Marketing" />
+                </div>
+                <div class="detail-box">
+                    <h5>Experiential Marketing</h5>
+                    <p>Engaging activations, roadshows, and interactive campaigns to boost brand awareness and audience interaction.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-sm-6 col-md-4">
+            <div class="box">
+                <div class="img-box">
+                    <img src="images/hat1.jpg" alt="Promo Products" />
+                </div>
+                <div class="detail-box">
+                    <h5>Promo Products</h5>
+                    <p>Custom-branded merchandise like caps, bags, umbrellas, and diaries to enhance brand recognition.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-sm-6 col-md-4">
+            <div class="box">
+                <div class="img-box">
+                    <img src="images/branding2.jpg" alt="Signages" />
+                </div>
+                <div class="detail-box">
+                    <h5>Signages</h5>
+                    <p>Design and production of roll-up banners, media banners, X-banners, and telescopic banners.</p>
+                </div>
+            </div>
+        </div>
+    
+        <div class="col-sm-6 col-md-4">
+            <div class="box">
+                <div class="img-box">
+                    <img src="images/tshirt2.jpg" alt="Merchandising" />
+                </div>
+                <div class="detail-box">
+                    <h5>Merchandising</h5>
+                    <p>Creating brand visibility through in-store branding, product displays, and promotional setups.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+      <div class="btn-box">
+        <a href="">
+          Enquire Now
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- end service section -->
+
+  <!--brands section start-->
+  <section class="brands-section scroller" data-speed="fast">
+    <div class="brands-container" id="brands-container">
+        <div class="brands-slider scroller__inner" id="brands-slider">
+            <img src="images/city eye.jpeg" alt="City Eye">
+            <img src="images/de heus.jpeg" alt="De Heus">
+            <img src="images/jacaranda.png" alt="Jacaranda">
+            <img src="images/aea.jpg" alt="AEA">
+            <img src="images/kings.jpeg" alt="Kings">
+            <img src="images/ntv.jpeg" alt="NTV">
+            <img src="images/pelum.jpeg" alt="Pelum">
+            <img src="images/qhala.jpeg" alt="Qhala">
+            <img src="images/smollan.png" alt="Smollan">
+            <img src="images/yd agency.jpeg" alt="YD Agency">
+        </div>
+    </div>
+</section>
+    
+  <!--brands section end-->
+
+  <!-- contact section -->
+  <section class="contact_section " id="contacts">
+    <div class="container">
+      <div class="heading_container heading_center">
+        <h2>Get In <span>Touch</span></h2>
+      </div>
+      <div class="row">
+        <div class="col-md-6 px-0">
+          <div class="form_container">
+            <form action="/contact" method="post" enctype="application/x-www-form-urlencoded">
+              <div class="form-row">
+                <div class="form-group col">
+                  <input type="text" name="fname" id="fname" class="form-control" placeholder="Your Name" required/>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col-lg-6">
+                  <input type="text" name="phone" id="phone" class="form-control" placeholder="Phone Number" required/>
+                </div>
+                <div class="form-group col-lg-6">
+                  <select name="services" id="services" class="form-control wide">
+                    <option>Select Service</option>
+                    <option value="merchandising">Merchandising</option>
+                    <option value="printing">Printing Services</option>
+                    <option value="branding">Branding</option>
+                    <option value="experiantial marketing">Experiantial Marketing</option>
+                    <option value="promo products">Promo Products</option>
+                    <option value="signages">Signages</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col">
+                  <input type="email" name="email" id="email" class="form-control" placeholder="Email" required/>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col">
+                  <input type="text" name="messageTxt" id="messageTxt" class="message-box form-control" placeholder="Message" required />
+                </div>
+              </div>
+              <div class="btn_box">
+                <button type="submit">
+                  SEND
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="col-md-6 px-0">
+          <div class="map_container">
+            <div class="map">
+              <div id="googleMap"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- end contact section -->
+
+  <!-- client section -->
+  <section class="client_section layout_padding">
+    <div class="container">
+      <div class="heading_container heading_center">
+        <h2>
+          Testimonial
+        </h2>
+      </div>
+      <div class="row">
+        <div class="col-md-9 mx-auto">
+          <div id="customCarousel2" class="carousel slide" data-ride="carousel">
+            <div class="row">
+              <div class="col-md-11">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <div class="box">
+                      <div class="client_id">
+                        <div class="img-box">
+                          <img src="images/cityeye.jpeg" alt="" />
+                        </div>
+              
+                      </div>
+                      <div class="detail-box">
+                        <p>
+                          We have been using their services and have always been happy with the results. They provide quality products,favourable pricing and timely delivery. Their responsiveness and ability to work well with us has been appreciated. We are confident in their service and would happily recommend them..
+                          
+                          ~ City Eye Hospital
+
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-1">
+                <ol class="carousel-indicators">
+                  <li data-target="#customCarousel2" data-slide-to="0" class="active"></li>
+                  <li data-target="#customCarousel2" data-slide-to="1"></li>
+                  <li data-target="#customCarousel2" data-slide-to="2"></li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- end client section -->
+
+  <!-- info section -->
+
+  <section class="info_section ">
+    <div class="info_container layout_padding2">
+      <div class="container">
+        <div class="info_logo">
+          <a class="navbar-brand" href="/"> Vormans<span>Brands Ltd</span> </a>
+        </div>
+        <div class="info_main">
+          <div class="row">
+            <div class="col-md-3 col-lg-2">
+              <div class="info_link-box">
+                <h5>
+                  Useful Link
+                </h5>
+                <ul>
+                  <li class=" active">
+                    <a class="" href="/">Home <span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="">
+                    <a class="" href="#about">About </a>
+                  </li>
+                  <li class="">
+                    <a class="" href="#products">Products </a>
+                  </li>
+                  <li class="">
+                    <a class="" href="#work"> Work </a>
+                  </li>
+                  <li class="">
+                    <a class="" href="#contacts"> Contact </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-md-3 ">
+              <h5>
+                Branding
+              </h5>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur
+                adipiscinaliquaLoreadipiscing
+              </p>
+            </div>
+            <div class="col-md-3 mx-auto  ">
+              <h5>
+                social media
+              </h5>
+              <div class="social_box">
+                <a href="#">
+                  <i class="fa fa-facebook" aria-hidden="true"></i>
+                </a>
+                <a href="#">
+                  <i class="fa fa-twitter" aria-hidden="true"></i>
+                </a>
+                <a href="#">
+                  <i class="fa fa-linkedin" aria-hidden="true"></i>
+                </a>
+                <a href="#">
+                  <i class="fa fa-youtube-play" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <h5>
+                Our Branding Center
+              </h5>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur
+                adipiscinaliquaLoreadipiscing
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="info_bottom">
+          <div class="row">
+            <div class="col-lg-9">
+              <div class="info_contact ">
+                <div class="row">
+                  <div class="col-md-3">
+                    <a href="#" class="link-box">
+                      <i class="fa fa-map-marker" aria-hidden="true"></i>
+                      <span>
+                        Kilome Road, Nairobi
+                      </span>
+                    </a>
+                  </div>
+                  <div class="col-md-5">
+                    <a href="#" class="link-box">
+                      <i class="fa fa-phone" aria-hidden="true"></i>
+                      <span>
+                        Call +254 728 905 225 / +254 725 340 624
+                      </span>
+                    </a>
+                  </div>
+                  <div class="col-md-4">
+                    <a href="#" class="link-box">
+                      <i class="fa fa-envelope" aria-hidden="true"></i>
+                      <span>
+                        vormansbrandsltd.co.ke
+                      </span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="info_form ">
+                <form action="">
+                  <input type="email" placeholder="Enter Your Email" />
+                  <button>
+                    <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end info section -->
+
+  <!-- footer section -->
+  <footer class="footer_section">
+    <div class="container">
+      <p>
+        &copy; <span id="displayYear"></span> All Rights Reserved By
+        <a href="/">Vormans Brands LTD</a>
+      </p>
+    </div>
+  </footer>
+  <!-- footer section -->
+
+  <script>
+    // Define selector for selecting
+    // anchor links with the hash
+    let anchorSelector = 'a[href^="#"]';
+
+    // Collect all such anchor links
+    let anchorList =
+        document.querySelectorAll(anchorSelector);
+
+    // Iterate through each of the links
+    anchorList.forEach(link => {
+        link.onclick = function (e) {
+
+            // Prevent scrolling if the
+            // hash value is blank
+            e.preventDefault();
+
+            // Get the destination to scroll to
+            // using the hash property
+            let destination =
+                document.querySelector(this.hash);
+
+            // Scroll to the destination using
+            // scrollIntoView method
+            destination.scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+    });
+</script>
+<script>
+ const scrollers = document.querySelectorAll(".scroller");
+
+// If a user hasn't opted in for recuded motion, then we add the animation
+if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  addAnimation();
+}
+
+function addAnimation() {
+  scrollers.forEach((scroller) => {
+    // add data-animated="true" to every `.scroller` on the page
+    scroller.setAttribute("data-animated", true);
+
+    // Make an array from the elements within `.scroller-inner`
+    const scrollerInner = scroller.querySelector(".scroller__inner");
+    const scrollerContent = Array.from(scrollerInner.children);
+
+    // For each item in the array, clone it
+    // add aria-hidden to it
+    // add it into the `.scroller-inner`
+    scrollerContent.forEach((item) => {
+      const duplicatedItem = item.cloneNode(true);
+      duplicatedItem.setAttribute("aria-hidden", true);
+      scrollerInner.appendChild(duplicatedItem);
+    });
+  });
+}
+</script>
+  <script>
+    function scrollLeft() {
+        document.getElementById('brands-container').scrollBy({ left: -200, behavior: 'smooth' });
+    }
+    function scrollRight() {
+        document.getElementById('brands-container').scrollBy({ left: 200, behavior: 'smooth' });
+    }
+</script>
+<!-- Bootstrap JS Bundle -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <!-- jQery -->
+  <script src="/js/jquery-3.4.1.min.js"></script>
+  <!-- popper js -->
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <!-- bootstrap js -->
+  <script src="/js/bootstrap.js"></script>
+  <!-- owl slider -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <!--  OwlCarousel 2 - Filter -->
+  <script src="https://huynhhuynh.github.io/owlcarousel2-filter/dist/owlcarousel2-filter.min.js"></script>
+  <!-- nice select -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js" integrity="sha256-Zr3vByTlMGQhvMfgkQ5BtWRSKBGa2QlspKYJnkjZTmo=" crossorigin="anonymous"></script>
+  <!-- custom js -->
+  <script src="/js/custom.js"></script>
+  <!-- Google Map -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap"></script>
+  <!-- End Google Map -->
+
+</body>
+
+</html>
