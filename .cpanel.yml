@@ -1,7 +1,6 @@
 ---
 deployment:
   tasks:
-    - export NODE_ENV=production
     - /bin/git pull origin main
     - /bin/npm install --production
     - /bin/npm run build
