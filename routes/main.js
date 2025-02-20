@@ -55,7 +55,7 @@ router.post(
             // Set up the email options
             const mailOptions = {
                 from: email, // Sender's email address
-                to: 'victormutua71@gmail.com,', // receivers email address
+                to: 'info@vormansbrandsltd.com,', // receivers email address
                 subject: `New Enquiry: ${services}`, // Email subject
                 text: `You have received a new enquiry from:
                 
